@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">到账提醒</string>
+    <string name="action_help">查看帮助</string>
+    <string name="action_save">保存</string>
+    <string name="action_save_short">保存</string>
+    <string name="error_field_required">字段不能为空</string>
+    <string name="error_incorrect_secretkey">密钥输入不正确</string>
+    <string name="error_invalid_apiurl">Api地址输入不正确</string>
+    <string name="error_invalid_secretkey">密钥长度不足4位</string>
+    <string name="prompt_apiurl">Api地址</string>
+    <string name="prompt_secretkey">签名密钥</string>
+    <string name="prompt_remarks">备注</string>
+</resources>
