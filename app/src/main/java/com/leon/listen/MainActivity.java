@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         etUrl.setText(SPUtils.getString("url"));
         etKey.setText(SPUtils.getString("key"));
         etName.setText(SPUtils.getString("name"));
-        etUrl.setText("http://hq59d.cn/api/code/uzhifu");
         initBroadcast();
     }
 
