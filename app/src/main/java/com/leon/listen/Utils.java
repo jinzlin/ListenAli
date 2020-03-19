@@ -28,23 +28,18 @@ public class Utils {
     }
 
     public static String getMatchPrice(String content) {
-        String result = null;
-        Matcher matcher = Pattern.compile("\\d+\\.\\d+", Pattern.DOTALL | Pattern.MULTILINE | Pattern.CASE_INSENSITIVE).matcher(content);
+        String result;
+        Matcher matcher = Pattern.compile(".*?(\\d+(\\.\\d+)?)元.*?", Pattern.DOTALL | Pattern.MULTILINE | Pattern.CASE_INSENSITIVE).matcher(content);
         if (matcher.matches()) {
-            result = matcher.group();
+            result = matcher.group(1);
         } else {
             result = "0";
         }
         return result;
     }
 
-    public static String getPrice(String content) {
-        try {
-            Log.e("aa-----", content.split("成功收款")[1].split("元。")[0]);
-            return content.split("成功收款")[1].split("元。")[0];
-        } catch (Exception e) {
-            return "-1";
-        }
+    public static boolean isMoneyNotification(String content) {
+        return Pattern.compile(".*?(\\d+(\\.\\d+)?)元.*?", Pattern.DOTALL | Pattern.CASE_INSENSITIVE).matcher(content).matches();
     }
 
 }

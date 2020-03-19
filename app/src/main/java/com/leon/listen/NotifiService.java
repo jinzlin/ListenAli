@@ -110,8 +110,12 @@ public class NotifiService extends NotificationListenerService {
                 if (TextUtils.isEmpty(text)) {
                     return;
                 }
+                if (!Utils.isMoneyNotification(text)) {
+                    return;
+                }
+                String price = Utils.getMatchPrice(text);
 
-                new Thread(getRunnable(this, text)).start();
+                new Thread(getRunnable(this, price)).start();
             }
         } catch (Exception e) {
             Log.i(TAG, "Get Message Error");
