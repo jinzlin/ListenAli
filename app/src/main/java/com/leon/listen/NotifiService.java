@@ -110,6 +110,9 @@ public class NotifiService extends NotificationListenerService {
                 if (TextUtils.isEmpty(text)) {
                     return;
                 }
+                if (text.contains("你有一笔") && text.contains("元的支出")) {
+                    return;
+                }
                 if (!Utils.isMoneyNotification(text)) {
                     return;
                 }
